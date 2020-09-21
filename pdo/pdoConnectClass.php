@@ -28,6 +28,14 @@ class pdoConnectClass {
         $items=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $items;
     }
+
+    //条件に合うデータを全て取得
+    //(このメソッドはMテーブルに使用)
+    public function getAll($sql) {
+        $stmt = $this->pdo_obj->query($sql);
+        $items=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $items;
+    } 
 }
 
 ?>

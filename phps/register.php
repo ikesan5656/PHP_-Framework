@@ -1,12 +1,19 @@
 <?php
 require_once dirname(__FILE__) . '/../pdo/pdoConnectClass.php';
 require_once dirname(__FILE__) . "/../smarty/libs/Smarty.class.php";
+require_once dirname(__FILE__) . "/../queryBuilder/queryBuilder.php";
 
 $smarty = new Smarty();
 $smarty->template_dir = '../templates/';
 $smarty->compile_dir  = '../templates_c/';
 //自作データベース接続クラスオブジェクト生成
 $connect_obj = new pdoConnectClass();
+//クエリビルダ
+$gender_model = new queryBuilder();
+$gender_model->setTable("M_GENDER")->queryBuild();
+
+$type_model = new queryBuilder();
+$type_model->setTable("M_TYPE")->queryBuild();
 
 try {
   //データベース接続
@@ -21,12 +28,9 @@ try {
 }
 
 //性別取得
-$sql = "SELECT * FROM M_GENDER";
-$m_gender = $connect_obj->select($sql);
-
+$m_gender = $connect_obj->getAll($gender_model->getQuery());
 //タイプ取得
-$sql = "SELECT * FROM M_TYPE";
-$m_type = $connect_obj->select($sql);
+$m_type = $connect_obj->getAll($type_model->getQuery());
 
 $smarty->assign('m_gender', $m_gender);
 $smarty->assign('m_type', $m_type);
