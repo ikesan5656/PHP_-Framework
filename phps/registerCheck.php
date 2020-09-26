@@ -19,7 +19,6 @@ try {
   echo "データベース接続失敗";
   header('Content-Type: text/plain; charset=UTF-8', true, 500);
   exit($e->getMessage()); 
-
 }
 
 //print_r($_POST["gender"]);
@@ -39,10 +38,10 @@ if(isset($_POST["gender"])) {
 
 //タイプ取得
 $sql = "SELECT * FROM M_TYPE";
-$m_type = $connect_obj->select($sql);
+$type = $connect_obj->select($sql);
 
 $smarty->assign('gender', $gender);
-$smarty->assign('m_type', $m_type);
+$smarty->assign('type', $type);
 
 $smarty->display("../templates/registerCheck.html");
 ?>

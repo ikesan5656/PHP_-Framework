@@ -64,9 +64,7 @@ class queryBuilder
     public function queryBuild() {
         //それぞれのクエリの生成
         $this->createQuery();
-
         $this->m_sql = implode(" ", $this->m_sql_array);
-
         return $this;
     }
 

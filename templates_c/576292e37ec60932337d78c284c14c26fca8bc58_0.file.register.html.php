@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-09-19 14:04:31
+/* Smarty version 3.1.34-dev-7, created on 2020-09-22 08:53:47
   from '/home/www/html/PHP_FrameWork/templates/register.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f65915f65f9f3_57868171',
+  'unifunc' => 'content_5f693d0b93ebd7_58594880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '576292e37ec60932337d78c284c14c26fca8bc58' => 
     array (
       0 => '/home/www/html/PHP_FrameWork/templates/register.html',
-      1 => 1600270990,
+      1 => 1600694366,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f65915f65f9f3_57868171 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f693d0b93ebd7_58594880 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -30,8 +30,7 @@ function content_5f65915f65f9f3_57868171 (Smarty_Internal_Template $_smarty_tpl)
   </head>
   <body>
     <h1>データベース登録</h1>
-    <p><?php echo $_smarty_tpl->tpl_vars['test']->value;?>
-</p>
+  
     <form action="../phps/registerCheck.php" method="POST"> 
       <table>
         <tr>
