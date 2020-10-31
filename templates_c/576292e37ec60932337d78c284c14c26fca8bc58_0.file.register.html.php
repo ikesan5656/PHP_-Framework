@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-09-22 08:53:47
+/* Smarty version 3.1.34-dev-7, created on 2020-10-31 14:50:28
   from '/home/www/html/PHP_FrameWork/templates/register.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f693d0b93ebd7_58594880',
+  'unifunc' => 'content_5f9cfb24e45cf0_95743737',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '576292e37ec60932337d78c284c14c26fca8bc58' => 
     array (
       0 => '/home/www/html/PHP_FrameWork/templates/register.html',
-      1 => 1600694366,
+      1 => 1604120625,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f693d0b93ebd7_58594880 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9cfb24e45cf0_95743737 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -83,6 +83,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         
       </table>
       <input type="submit" value="送信">
+      <input type="reset" name="reset" value="リセット" >
     </form>
   </body>
 </html><?php }
