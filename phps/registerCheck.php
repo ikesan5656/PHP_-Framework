@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once dirname(__FILE__) . '/../pdo/pdoConnectClass.php';
 require_once dirname(__FILE__) . "/../smarty/libs/Smarty.class.php";
 //require_once dirname(__FILE__) . "draw.php";
@@ -21,14 +23,20 @@ try {
   exit($e->getMessage()); 
 }
 
-//print_r($_POST["gender"]);
+//postデータを受け取る
+$post_data = $_POST;
+//postデータをセッション変数に格納
+$_SESSION = $post_data;
+
+print_r($_SESSION);
+
 //性別取得
 $sql = "SELECT * FROM M_GENDER";
 $m_gender = $connect_obj->select($sql);
 
-if(isset($_POST["gender"])) {
+if(isset($post_data["gender"])) {
   foreach($m_gender as $m_gender_data) {
-    if($_POST["gender"] == $m_gender_data["GENDER_ID"]) {
+    if($post_data["gender"] == $m_gender_data["GENDER_ID"]) {
       $gender = $m_gender_data["NAME"];
     }
   }

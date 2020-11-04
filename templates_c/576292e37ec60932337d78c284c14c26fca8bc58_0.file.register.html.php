@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-31 14:50:28
+/* Smarty version 3.1.34-dev-7, created on 2020-11-01 11:25:56
   from '/home/www/html/PHP_FrameWork/templates/register.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f9cfb24e45cf0_95743737',
+  'unifunc' => 'content_5f9e1cb479e946_16685582',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '576292e37ec60932337d78c284c14c26fca8bc58' => 
     array (
       0 => '/home/www/html/PHP_FrameWork/templates/register.html',
-      1 => 1604120625,
+      1 => 1604197545,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f9cfb24e45cf0_95743737 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f9e1cb479e946_16685582 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -38,7 +38,8 @@ function content_5f9cfb24e45cf0_95743737 (Smarty_Internal_Template $_smarty_tpl)
         </tr>
         <tr>
           <th>名前</th>
-          <td><input type="text" name="name"></td>
+          <td><input type="text" name="name" value=<?php echo $_smarty_tpl->tpl_vars['m_name']->value;?>
+></td>
         </tr>
 
         <tr>

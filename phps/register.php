@@ -1,8 +1,12 @@
 <?php
+if (!session_start()) {
+	echo 'セッション開始失敗！';
+}
+
 require_once dirname(__FILE__) . '/../pdo/pdoConnectClass.php';
 require_once dirname(__FILE__) . "/../smarty/libs/Smarty.class.php";
 require_once dirname(__FILE__) . "/../queryBuilder/queryBuilder.php";
-
+error_log("〇〇の処理で失敗しました", 0);
 $smarty = new Smarty();
 $smarty->template_dir = '../templates/';
 $smarty->compile_dir  = '../templates_c/';
@@ -27,11 +31,29 @@ try {
 
 }
 
+if(isset($_SESSION["name"])) {
+  $m_name = $_SESSION["name"];
+}else{
+  $m_name = "";
+}
+
+//選択している性別ID
+/*if(isset($_SESSION["gender"])) {
+  $m_gender = $_SESSION["gender"];
+}else{
+  $m_gender = "";
+}*/
+//print_r($_SESSION);
+
+
+
 //性別取得
 $m_gender = $connect_obj->getAll($gender_model->getQuery());
 //タイプ取得
 $m_type = $connect_obj->getAll($type_model->getQuery());
 
+
+$smarty->assign('m_name', $m_name);
 $smarty->assign('m_gender', $m_gender);
 $smarty->assign('m_type', $m_type);
 $smarty->assign('test', "test");
