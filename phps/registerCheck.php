@@ -13,14 +13,14 @@ $connect_obj = new pdoConnectClass();
 //$draw = new draw();
 
 try {
-  //データベース接続
-  $connect_obj->connection();
+	//データベース接続
+	$connect_obj->connection();
 
 } catch(PDOException $e) {
-  //エラー発生時
-  echo "データベース接続失敗";
-  header('Content-Type: text/plain; charset=UTF-8', true, 500);
-  exit($e->getMessage()); 
+	//エラー発生時
+	echo "データベース接続失敗";
+	header('Content-Type: text/plain; charset=UTF-8', true, 500);
+	exit($e->getMessage()); 
 }
 
 //postデータを受け取る
@@ -35,11 +35,11 @@ $sql = "SELECT * FROM M_GENDER";
 $m_gender = $connect_obj->select($sql);
 
 if(isset($post_data["gender"])) {
-  foreach($m_gender as $m_gender_data) {
-    if($post_data["gender"] == $m_gender_data["GENDER_ID"]) {
-      $gender = $m_gender_data["NAME"];
-    }
-  }
+	foreach($m_gender as $m_gender_data) {
+		if($post_data["gender"] == $m_gender_data["GENDER_ID"]) {
+			$gender = $m_gender_data["NAME"];
+		}
+	}
 }
 
 //$gender = $draw->displaySelectData($_POST["gender"], $m_gender);
@@ -50,9 +50,9 @@ $m_type = $connect_obj->select($sql);
 
 if(isset($post_data["type"])) {
 	foreach($m_type as $m_type_data) {
-	  if($post_data["type"] == $m_type_data["TYPE_ID"]) {
-		$type = $m_type_data["NAME"];
-	  }
+		if($post_data["type"] == $m_type_data["TYPE_ID"]) {
+			$type = $m_type_data["NAME"];
+		}
 	}
 }
 

@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/table.css">
-    <title>データベース登録</title>
-  </head>
-  <body>
-    <h1>データベース登録</h1>
-  
-    <form action="../phps/registerCheck.php" method="POST"> 
-      <table>
-        <tr>
-          <td colspan=2>基本情報</td>
-        </tr>
-        <tr>
-          <th>名前</th>
-          <td><input type="text" name="name" value={$m_name}></td>
-        </tr>
-
-        <tr>
-          <th>性別</th>
-          <td>
-            {foreach from=$m_gender item=gender}
-			  <input type="radio" name="gender" value={$gender.GENDER_ID}
-			  	{if $gender.GENDER_ID == $select_data_array.gender}
-			  		checked
-			  	{/if}
-			  >
-              <label for="gender">{$gender.NAME}</label>
-            {/foreach}
-          </td>
-        </tr>
-
-        <tr>
-          <th>タイプ</th>
-          <td>
-              <select name="type">
-                {foreach from=$m_type item=type}
-				<option value={$type.TYPE_ID}
-					{if $type.TYPE_ID == $select_data_array.type}
-						selected
-					{/if}
-				>{$type.NAME}
-
-				</option>
-                {/foreach}
-              </select>
-          </td>
-        </tr>
-
-        
-      </table>
-      <input type="submit" value="送信">
-      <input type="reset" name="reset" value="リセット" >
-    </form>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/table.css">
+		<title>データベース登録</title>
+	</head>
+	<body>
+		<h1>データベース登録</h1>		
+		<form action="../phps/registerCheck.php" method="POST"> 
+			<table>
+				<tr>
+					<td colspan=2>基本情報</td>
+				</tr>
+				<tr>
+					<th>名前</th>
+					<td><input type="text" name="name" value={$m_name}></td>
+				</tr>	
+				<tr>
+					<th>性別</th>
+					<td>
+						{foreach from=$m_gender item=gender}
+							<input type="radio" name="gender" value={$gender.GENDER_ID}
+								{if $gender.GENDER_ID == $select_data_array.gender}
+									checked
+								{/if}
+							>
+							<label for="gender">{$gender.NAME}</label>
+						{/foreach}
+					</td>
+				</tr>
+				<tr>
+				  <th>タイプ</th>
+				  <td>
+				      <select name="type">
+						{foreach from=$m_type item=type}
+							<option value={$type.TYPE_ID}
+								{if $type.TYPE_ID == $select_data_array.type}
+									selected
+								{/if}
+								>{$type.NAME}
+							</option>
+				        {/foreach}
+				      </select>
+				  </td>
+				</tr>
+			</table>
+			<input type="submit" value="送信">
+			<input type="reset" name="reset" value="リセット" >
+		</form>
+	</body>
 </html>
