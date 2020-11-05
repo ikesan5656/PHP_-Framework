@@ -46,7 +46,15 @@ if(isset($post_data["gender"])) {
 
 //タイプ取得
 $sql = "SELECT * FROM M_TYPE";
-$type = $connect_obj->select($sql);
+$m_type = $connect_obj->select($sql);
+
+if(isset($post_data["type"])) {
+	foreach($m_type as $m_type_data) {
+	  if($post_data["type"] == $m_type_data["TYPE_ID"]) {
+		$type = $m_type_data["NAME"];
+	  }
+	}
+}
 
 $smarty->assign('gender', $gender);
 $smarty->assign('type', $type);

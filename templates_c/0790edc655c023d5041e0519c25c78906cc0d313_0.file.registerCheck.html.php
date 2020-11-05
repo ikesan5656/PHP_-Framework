@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-05 01:30:49
-  from '/home/www/html/PHP_FrameWork/templates/registerCheck.html' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-04 23:26:54
+  from '/home/www/html/PHP_Framework/templates/registerCheck.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa355c925e306_57751118',
+  'unifunc' => 'content_5fa338bec04387_73240157',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f2f4e76c710fcc37b79b9eeebffce96290f47fea' => 
+    '0790edc655c023d5041e0519c25c78906cc0d313' => 
     array (
-      0 => '/home/www/html/PHP_FrameWork/templates/registerCheck.html',
-      1 => 1604539834,
+      0 => '/home/www/html/PHP_Framework/templates/registerCheck.html',
+      1 => 1604532105,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa355c925e306_57751118 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa338bec04387_73240157 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -50,8 +50,7 @@ function content_5fa355c925e306_57751118 (Smarty_Internal_Template $_smarty_tpl)
 
         <tr>
           <th>タイプ</th>
-          <td><?php echo $_smarty_tpl->tpl_vars['type']->value;?>
-</td>
+          <td>      </td>
         </tr>
 
         

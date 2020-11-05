@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-05 02:01:31
-  from '/home/www/html/PHP_FrameWork/templates/register.html' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-04 23:26:45
+  from '/home/www/html/PHP_Framework/templates/register.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa35cfb8d5ab7_31311018',
+  'unifunc' => 'content_5fa338b5e9c219_72971658',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '576292e37ec60932337d78c284c14c26fca8bc58' => 
+    '3a57730a696e28e0aae1a85a81608e323555d707' => 
     array (
-      0 => '/home/www/html/PHP_FrameWork/templates/register.html',
-      1 => 1604541682,
+      0 => '/home/www/html/PHP_Framework/templates/register.html',
+      1 => 1604532105,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa35cfb8d5ab7_31311018 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fa338b5e9c219_72971658 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -51,12 +51,8 @@ $_smarty_tpl->tpl_vars['gender']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['gender']->value) {
 $_smarty_tpl->tpl_vars['gender']->do_else = false;
 ?>
-			  <input type="radio" name="gender" value=<?php echo $_smarty_tpl->tpl_vars['gender']->value['GENDER_ID'];?>
-
-			  	<?php if ($_smarty_tpl->tpl_vars['gender']->value['GENDER_ID'] == $_smarty_tpl->tpl_vars['select_data_array']->value['gender']) {?>
-			  		checked
-			  	<?php }?>
-			  >
+              <input type="radio" name="gender" value=<?php echo $_smarty_tpl->tpl_vars['gender']->value['GENDER_ID'];?>
+>
               <label for="gender"><?php echo $_smarty_tpl->tpl_vars['gender']->value['NAME'];?>
 </label>
             <?php
@@ -75,15 +71,9 @@ $_smarty_tpl->tpl_vars['type']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['type']->value) {
 $_smarty_tpl->tpl_vars['type']->do_else = false;
 ?>
-				<option value=<?php echo $_smarty_tpl->tpl_vars['type']->value['TYPE_ID'];?>
-
-					<?php if ($_smarty_tpl->tpl_vars['type']->value['TYPE_ID'] == $_smarty_tpl->tpl_vars['select_data_array']->value['type']) {?>
-						selected
-					<?php }?>
-				><?php echo $_smarty_tpl->tpl_vars['type']->value['NAME'];?>
-
-
-				</option>
+                <option value=<?php echo $_smarty_tpl->tpl_vars['type']->value['TYPE_ID'];?>
+><?php echo $_smarty_tpl->tpl_vars['type']->value['NAME'];?>
+</option>
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>

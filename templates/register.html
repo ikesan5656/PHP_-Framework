@@ -22,7 +22,11 @@
           <th>性別</th>
           <td>
             {foreach from=$m_gender item=gender}
-              <input type="radio" name="gender" value={$gender.GENDER_ID}>
+			  <input type="radio" name="gender" value={$gender.GENDER_ID}
+			  	{if $gender.GENDER_ID == $select_data_array.gender}
+			  		checked
+			  	{/if}
+			  >
               <label for="gender">{$gender.NAME}</label>
             {/foreach}
           </td>
@@ -33,7 +37,13 @@
           <td>
               <select name="type">
                 {foreach from=$m_type item=type}
-                <option value={$type.TYPE_ID}>{$type.NAME}</option>
+				<option value={$type.TYPE_ID}
+					{if $type.TYPE_ID == $select_data_array.type}
+						selected
+					{/if}
+				>{$type.NAME}
+
+				</option>
                 {/foreach}
               </select>
           </td>
