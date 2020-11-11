@@ -29,6 +29,12 @@ try {
 	exit($e->getMessage()); 
 }
 
+if(isset($_SESSION["index"])) {
+	$m_index = $_SESSION["index"];
+}else{
+	$m_index = "";
+}
+
 if(isset($_SESSION["name"])) {
 	$m_name = $_SESSION["name"];
 }else{
@@ -57,6 +63,7 @@ $m_gender = $connect_obj->getAll($gender_model->getQuery());
 //タイプ取得
 $m_type = $connect_obj->getAll($type_model->getQuery());
 
+$smarty->assign('m_index', $m_index);
 $smarty->assign('m_name', $m_name);
 $smarty->assign('m_gender', $m_gender);
 $smarty->assign('m_type', $m_type);

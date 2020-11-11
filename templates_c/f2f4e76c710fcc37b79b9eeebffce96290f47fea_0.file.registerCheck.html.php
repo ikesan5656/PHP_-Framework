@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-05 04:49:39
+/* Smarty version 3.1.34-dev-7, created on 2020-11-11 12:45:32
   from '/home/www/html/PHP_FrameWork/templates/registerCheck.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fa38463da7d85_72453313',
+  'unifunc' => 'content_5fabdcece81342_37636019',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2f4e76c710fcc37b79b9eeebffce96290f47fea' => 
     array (
       0 => '/home/www/html/PHP_FrameWork/templates/registerCheck.html',
-      1 => 1604551769,
+      1 => 1605075438,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fa38463da7d85_72453313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fabdcece81342_37636019 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -34,6 +34,11 @@ function content_5fa38463da7d85_72453313 (Smarty_Internal_Template $_smarty_tpl)
 			<table>
 				<tr>
 					<td colspan=2>基本情報</td>
+				</tr>
+				<tr>
+					<th>図鑑番号</th>
+					<td><?php echo $_POST['index'];?>
+</td>
 				</tr>
 				<tr>
 					<th>名前</th>
@@ -51,7 +56,7 @@ function content_5fa38463da7d85_72453313 (Smarty_Internal_Template $_smarty_tpl)
 </td>
 				</tr>
 			</table>
-
+			
 			<input type="submit" name="regist" value="登録">
 			<input type="submit" name="back" value="戻る">
 		</form>

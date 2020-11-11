@@ -35,7 +35,23 @@ class pdoConnectClass {
         $stmt = $this->pdo_obj->query($sql);
         $items=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $items;
-    } 
+	}
+	
+	/**
+	 * ポケモン図鑑テーブルにプリペアドステートメントで挿入
+	 * 
+	 */
+	public function insertPokeIndex($nationwide_id, $name, $gender_id, $type_id) {
+		//文を実行する準備を行い、文オブジェクトを返す
+		$stmt = $this->pdo_obj->prepare("INSERT INTO U_POKEMON_INDEX (NATIONWIDE_ID, NAME, GENDER_ID, M_TYPE_ID)
+		VALUES (:NATIONWIDE_ID, :NAME, :GENDER_ID, :TYPE_ID)");
+
+		$stmt->bindValue(':NATIONWIDE_ID', $nationwide_id, PDO::PARAM_INT);
+		$stmt->bindParam(':NAME', $name, PDO::PARAM_STR);
+		$stmt->bindValue(':GENDER_ID', $gender_id, PDO::PARAM_INT);
+		$stmt->bindValue(':TYPE_ID', $type_id, PDO::PARAM_INT);
+		$stmt->execute();
+	}
 }
 
 ?>

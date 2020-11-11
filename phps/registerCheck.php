@@ -3,6 +3,8 @@ session_start();
 
 require_once dirname(__FILE__) . '/../pdo/pdoConnectClass.php';
 require_once dirname(__FILE__) . "/../smarty/libs/Smarty.class.php";
+require_once dirname(__FILE__) . "/../queryBuilder/queryBuilder.php";
+
 //require_once dirname(__FILE__) . "draw.php";
 
 $smarty = new Smarty();
