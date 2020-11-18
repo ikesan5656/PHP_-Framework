@@ -35,11 +35,13 @@ print_r($_SESSION);
 //性別取得
 $sql = "SELECT * FROM M_GENDER";
 $m_gender = $connect_obj->select($sql);
+$select_gender = array();
 
 if(isset($post_data["gender"])) {
 	foreach($m_gender as $m_gender_data) {
 		if($post_data["gender"] == $m_gender_data["GENDER_ID"]) {
-			$gender = $m_gender_data["NAME"];
+			$select_gender["NAME"] = $m_gender_data["NAME"];
+			$select_gender["GENDER_ID"] = $m_gender_data["GENDER_ID"];
 		}
 	}
 }
@@ -53,13 +55,16 @@ $m_type = $connect_obj->select($sql);
 if(isset($post_data["type"])) {
 	foreach($m_type as $m_type_data) {
 		if($post_data["type"] == $m_type_data["TYPE_ID"]) {
-			$type = $m_type_data["NAME"];
+			//$type = $m_type_data["NAME"];
+			$select_type["NAME"] = $m_type_data["NAME"];
+			$select_type["TYPE_ID"] = $m_type_data["TYPE_ID"];
 		}
 	}
 }
 
-$smarty->assign('gender', $gender);
-$smarty->assign('type', $type);
+//$smarty->assign('type', $type);
+$smarty->assign('select_gender', $select_gender);
+$smarty->assign('select_type', $select_type);
 
 $smarty->display("../templates/registerCheck.html");
 ?>

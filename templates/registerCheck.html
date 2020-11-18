@@ -22,14 +22,19 @@
 				</tr>
 				<tr>
 					<th>性別</th>
-					<td>{$gender}</td>
+					<td>{$select_gender.NAME}</td>
 				</tr>
 				<tr>
 					<th>タイプ</th>
-					<td>{$type}</td>
+					<td>{$select_type.NAME}</td>
 				</tr>
 			</table>
-			
+			<!--hidden-->
+			<input type="hidden" name="nationwide_id" value={$smarty.post.index}>
+			<input type="hidden" name="name" value={$smarty.post.name}>
+			<input type="hidden" name="select_gender_id" value={$select_gender.GENDER_ID}>
+			<input type="hidden" name="select_type_id" value={$select_type.TYPE_ID}>
+
 			<input type="submit" name="regist" value="登録">
 			<input type="submit" name="back" value="戻る">
 		</form>

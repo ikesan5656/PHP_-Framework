@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-11 12:45:32
+/* Smarty version 3.1.34-dev-7, created on 2020-11-18 02:45:36
   from '/home/www/html/PHP_FrameWork/templates/registerCheck.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fabdcece81342_37636019',
+  'unifunc' => 'content_5fb48ad0259ca7_29530969',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2f4e76c710fcc37b79b9eeebffce96290f47fea' => 
     array (
       0 => '/home/www/html/PHP_FrameWork/templates/registerCheck.html',
-      1 => 1605075438,
+      1 => 1605667521,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fabdcece81342_37636019 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb48ad0259ca7_29530969 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -47,16 +47,25 @@ function content_5fabdcece81342_37636019 (Smarty_Internal_Template $_smarty_tpl)
 				</tr>
 				<tr>
 					<th>性別</th>
-					<td><?php echo $_smarty_tpl->tpl_vars['gender']->value;?>
+					<td><?php echo $_smarty_tpl->tpl_vars['select_gender']->value['NAME'];?>
 </td>
 				</tr>
 				<tr>
 					<th>タイプ</th>
-					<td><?php echo $_smarty_tpl->tpl_vars['type']->value;?>
+					<td><?php echo $_smarty_tpl->tpl_vars['select_type']->value['NAME'];?>
 </td>
 				</tr>
 			</table>
-			
+			<!--hidden-->
+			<input type="hidden" name="nationwide_id" value=<?php echo $_POST['index'];?>
+>
+			<input type="hidden" name="name" value=<?php echo $_POST['name'];?>
+>
+			<input type="hidden" name="select_gender_id" value=<?php echo $_smarty_tpl->tpl_vars['select_gender']->value['GENDER_ID'];?>
+>
+			<input type="hidden" name="select_type_id" value=<?php echo $_smarty_tpl->tpl_vars['select_type']->value['TYPE_ID'];?>
+>
+
 			<input type="submit" name="regist" value="登録">
 			<input type="submit" name="back" value="戻る">
 		</form>
