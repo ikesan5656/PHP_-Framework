@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-18 02:36:11
+/* Smarty version 3.1.34-dev-7, created on 2020-11-18 08:15:13
   from '/home/www/html/PHP_Framework/templates/registerCheck.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb4889bda3ed3_92763127',
+  'unifunc' => 'content_5fb4d811e902c9_87914088',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0790edc655c023d5041e0519c25c78906cc0d313' => 
     array (
       0 => '/home/www/html/PHP_Framework/templates/registerCheck.html',
-      1 => 1605666964,
+      1 => 1605667521,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fb4889bda3ed3_92763127 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb4d811e902c9_87914088 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -52,7 +52,7 @@ function content_5fb4889bda3ed3_92763127 (Smarty_Internal_Template $_smarty_tpl)
 				</tr>
 				<tr>
 					<th>タイプ</th>
-					<td><?php echo $_smarty_tpl->tpl_vars['type']->value;?>
+					<td><?php echo $_smarty_tpl->tpl_vars['select_type']->value['NAME'];?>
 </td>
 				</tr>
 			</table>
@@ -62,6 +62,8 @@ function content_5fb4889bda3ed3_92763127 (Smarty_Internal_Template $_smarty_tpl)
 			<input type="hidden" name="name" value=<?php echo $_POST['name'];?>
 >
 			<input type="hidden" name="select_gender_id" value=<?php echo $_smarty_tpl->tpl_vars['select_gender']->value['GENDER_ID'];?>
+>
+			<input type="hidden" name="select_type_id" value=<?php echo $_smarty_tpl->tpl_vars['select_type']->value['TYPE_ID'];?>
 >
 
 			<input type="submit" name="regist" value="登録">
