@@ -3,6 +3,7 @@ session_start();
 
 require_once dirname(__FILE__) . '/../pdo/pdoConnectClass.php';
 require_once dirname(__FILE__) . "/../queryBuilder/queryBuilderInsert.php";
+require_once dirname(__FILE__) . "/../Db/U_POKEMON_INDEX.php";
 
 //postデータを受け取る
 $post_data = $_POST;
@@ -32,13 +33,15 @@ if(isset($_POST['regist'])) {
 	$insert_sql = $poke_index_insert_model->insertPokemonIndexSql($post_data["nationwide_id"], $name, $post_data["select_gender_id"], $post_data["select_type_id"]);
 	echo $insert_sql;*/
 	//$name = "'" . $post_data["name"] . "'";
-	$connect_obj->insertPokeIndex($post_data["nationwide_id"], $post_data["name"], $post_data["select_gender_id"], $post_data["select_type_id"]);
+	$model_pokemon_index = new Db_U_POKEMON_INDEX();
+	$model_pokemon_index->insertAll($connect_obj->getPdo(), $post_data["nationwide_id"], $post_data["name"], $post_data["select_gender_id"], $post_data["select_type_id"]);
+	//$connect_obj->insertPokeIndex($post_data["nationwide_id"], $post_data["name"], $post_data["select_gender_id"], $post_data["select_type_id"]);
 }
 
 //戻るボタンを押したとき
 if(isset($_POST['back'])) {
 	//登録ページに値を保持してリダイレクト
-	header('Location: http://192.168.33.10/PHP_FrameWork/phps/register.php');
+	header('Location: http://192.168.33.10/PHP_FrameWork/app/register.php');
 	exit;
 }
 

@@ -1,0 +1,40 @@
+@charset"utf-8";
+
+/*タイトル*/
+.page_header {
+	color: red;
+	text-align: center;
+}
+
+/*テーブルタグ*/
+table.custom {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: solid 2px orange;/*表全体を線で囲う*/
+}
+
+/*テーブルの行*/
+/*table tr.horizontal {
+
+}*/
+
+/*テーブル内の見出し(thタグに使用)*/
+.table_header {
+	border: 3px solid red;
+	text-align: left;
+	color: black;
+	background-color: #CCE5FF;
+	text-align: center;
+	
+}
+
+/*テーブル内のデータ部分(tdタグ)*/
+.table_cell {
+	text-align: center;
+	background-color: #eee;
+	height: 80px;
+	border: solid 1px;
+}
+
+

@@ -43,7 +43,7 @@ class pdoConnectClass {
 	 */
 	public function insertPokeIndex($nationwide_id, $name, $gender_id, $type_id) {
 		//文を実行する準備を行い、文オブジェクトを返す
-		$stmt = $this->pdo_obj->prepare("INSERT INTO U_POKEMON_INDEX (NATIONWIDE_ID, NAME, GENDER_ID, M_TYPE_ID)
+		$stmt = $this->pdo_obj->prepare("INSERT INTO U_POKEMON_INDEX (NATIONWIDE_ID, NAME, GENDER_ID, TYPE_ID)
 		VALUES (:NATIONWIDE_ID, :NAME, :GENDER_ID, :TYPE_ID)");
 
 		$stmt->bindValue(':NATIONWIDE_ID', $nationwide_id, PDO::PARAM_INT);
