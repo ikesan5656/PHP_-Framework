@@ -39,9 +39,9 @@ $select_gender = array();
 
 if(isset($post_data["gender"])) {
 	foreach($m_gender as $m_gender_data) {
-		if($post_data["gender"] == $m_gender_data["GENDER_ID"]) {
+		if($post_data["gender"] == $m_gender_data["M_GENDER_ID"]) {
 			$select_gender["NAME"] = $m_gender_data["NAME"];
-			$select_gender["GENDER_ID"] = $m_gender_data["GENDER_ID"];
+			$select_gender["GENDER_ID"] = $m_gender_data["M_GENDER_ID"];
 		}
 	}
 }
@@ -54,10 +54,10 @@ $m_type = $connect_obj->select($sql);
 
 if(isset($post_data["type"])) {
 	foreach($m_type as $m_type_data) {
-		if($post_data["type"] == $m_type_data["TYPE_ID"]) {
+		if($post_data["type"] == $m_type_data["M_TYPE_ID"]) {
 			//$type = $m_type_data["NAME"];
 			$select_type["NAME"] = $m_type_data["NAME"];
-			$select_type["TYPE_ID"] = $m_type_data["TYPE_ID"];
+			$select_type["TYPE_ID"] = $m_type_data["M_TYPE_ID"];
 		}
 	}
 }

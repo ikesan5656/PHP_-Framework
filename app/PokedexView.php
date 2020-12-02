@@ -24,4 +24,16 @@ try {
 	exit($e->getMessage()); 
 }
 
+//U_POKEMON_INDEXテーブルの情報を取得(仮)
+
+//全取得するクエリの組み立て
+$pokemon_index_model = new queryBuilder();
+$pokemon_index_model->setTable("U_POKEMON_INDEX")->queryBuild();
+
+//U_POKEMON_INDEXテーブルの情報を全レコード取得
+$pokemon_index_data = $connect_obj->getAll($pokemon_index_model->getQuery());
+
+print_r($pokemon_index_data);
+
+$smarty->assign('pokemon_index_data', $pokemon_index_data);
 $smarty->display("../templates/PokedexView.html");

@@ -29,7 +29,7 @@ class Db_U_POKEMON_INDEX extends Db_BaseController {
 	}
 
 	/**
-	 * ポケモン図鑑テーブルの情報を全て取得する(ユーザー入力がない)
+	 * ポケモン図鑑テーブルの情報を全て取得する(セキュリティ対策)
 	 * 
 	 */
 	public function selectAll() {

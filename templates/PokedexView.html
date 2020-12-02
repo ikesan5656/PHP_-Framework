@@ -10,18 +10,32 @@
 		<form action="" method="POST"> 
 			<table class="custom">
 				<tr>
-					<th class="table_header" width="5%">図鑑番号</th>
+					<th class="table_header" width="10%">図鑑番号</th>
 					<th class="table_header">名前</th>
+					<th class="table_header">性別</th>
 				</tr>
+				<!--
 				<tr>
-					<td class="table_cell">1</td>
+					<td class="table_cell">
+						<p>1</p>
+						<img src="../Assets/PixelArts/001.png" alt="画像" width="64">
+					</td>
 					<td class="table_cell">フシギダネ</td>
+					<td class="table_cell">オス</td>
 				</tr>
 				<tr>
 					<td class="table_cell">2</td>
 					<td class="table_cell">フシギソウ</td>
+					<td class="table_cell">メス</td>
 				</tr>
-
+				-->
+				{foreach from=$pokemon_index_data item=pokemon_data}
+					<tr>
+						<td class="table_cell">{$pokemon_data.NATIONWIDE_ID}</td>
+						<td class="table_cell">{$pokemon_data.NAME}</td>
+						<td class="table_cell">メス</td>
+					</tr>
+				{/foreach}
 
 			</table>
 		</form>
