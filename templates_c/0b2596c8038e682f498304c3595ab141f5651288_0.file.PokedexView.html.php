@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 08:19:50
+/* Smarty version 3.1.34-dev-7, created on 2020-12-04 07:00:23
   from '/home/www/html/PHP_Framework/templates/PokedexView.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc74e26367e35_98736590',
+  'unifunc' => 'content_5fc9de8785b328_07454062',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0b2596c8038e682f498304c3595ab141f5651288' => 
     array (
       0 => '/home/www/html/PHP_Framework/templates/PokedexView.html',
-      1 => 1606897188,
+      1 => 1607065216,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc74e26367e35_98736590 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc9de8785b328_07454062 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -63,7 +63,8 @@ $_smarty_tpl->tpl_vars['pokemon_data']->do_else = false;
 </td>
 						<td class="table_cell"><?php echo $_smarty_tpl->tpl_vars['pokemon_data']->value['NAME'];?>
 </td>
-						<td class="table_cell">メス</td>
+						<td class="table_cell"><?php echo $_smarty_tpl->tpl_vars['pokemon_data']->value['GENDER_NAME'];?>
+</td>
 					</tr>
 				<?php
 }

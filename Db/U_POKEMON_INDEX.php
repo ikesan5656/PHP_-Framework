@@ -35,4 +35,20 @@ class Db_U_POKEMON_INDEX extends Db_BaseController {
 	public function selectAll() {
 
 	}
+
+	/**
+	 * 関連テーブルをjoinし、取得する
+	 */
+	public function joinSelect($pdo_obj) {
+		$stmt = $pdo_obj->prepare("
+		SELECT {$this->table_name}.NATIONWIDE_ID, {$this->table_name}.NAME, M_GENDER.NAME AS GENDER_NAME
+		FROM {$this->table_name} 
+		LEFT JOIN M_GENDER 
+		ON {$this->table_name}.GENDER_ID = M_GENDER.M_GENDER_ID
+		");
+		$stmt->execute();
+		$all_join_data = $stmt->fetchAll();
+		return $all_join_data;
+		
+	}
 }
