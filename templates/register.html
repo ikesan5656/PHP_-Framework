@@ -34,19 +34,24 @@
 					</td>
 				</tr>
 				<tr>
-				  <th>タイプ</th>
-				  <td>
-				      <select name="type">
-						{foreach from=$m_type item=type}
-							<option value={$type.M_TYPE_ID}
-								{if $type.M_TYPE_ID == $select_data_array.type}
-									selected
-								{/if}
-								>{$type.NAME}
-							</option>
-				        {/foreach}
-				      </select>
-				  </td>
+					<th>タイプ</th>
+					<td>
+						
+						{foreach from=$m_type item=type name=foo}
+
+							<input type="checkbox" name="type[]" value={$type.M_TYPE_ID}
+							{if $type.M_TYPE_ID == $select_data_array.type}
+								checked="checked"
+							{/if}
+							>
+							{$type.NAME}
+							
+							{if $smarty.foreach.foo.iteration % 9 == 0}
+								<br>
+							{/if}
+
+						{/foreach}
+					</td>
 				</tr>
 			</table>
 			<input type="submit" value="送信">

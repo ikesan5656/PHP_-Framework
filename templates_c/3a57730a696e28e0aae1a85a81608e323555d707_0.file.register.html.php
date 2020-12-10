@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 14:20:10
+/* Smarty version 3.1.34-dev-7, created on 2020-12-09 05:27:15
   from '/home/www/html/PHP_Framework/templates/register.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc7a29adf6579_33558600',
+  'unifunc' => 'content_5fd060332aa132_51695767',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a57730a696e28e0aae1a85a81608e323555d707' => 
     array (
       0 => '/home/www/html/PHP_Framework/templates/register.html',
-      1 => 1606918774,
+      1 => 1607488045,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc7a29adf6579_33558600 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fd060332aa132_51695767 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -68,28 +68,36 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					</td>
 				</tr>
 				<tr>
-				  <th>タイプ</th>
-				  <td>
-				      <select name="type">
+					<th>タイプ</th>
+					<td>
+						
 						<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['m_type']->value, 'type');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['m_type']->value, 'type', false, NULL, 'foo', array (
+  'iteration' => true,
+));
 $_smarty_tpl->tpl_vars['type']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['type']->value) {
 $_smarty_tpl->tpl_vars['type']->do_else = false;
+$_smarty_tpl->tpl_vars['__smarty_foreach_foo']->value['iteration']++;
 ?>
-							<option value=<?php echo $_smarty_tpl->tpl_vars['type']->value['M_TYPE_ID'];?>
 
-								<?php if ($_smarty_tpl->tpl_vars['type']->value['M_TYPE_ID'] == $_smarty_tpl->tpl_vars['select_data_array']->value['type']) {?>
-									selected
-								<?php }?>
-								><?php echo $_smarty_tpl->tpl_vars['type']->value['NAME'];?>
+							<input type="checkbox" name="type[]" value=<?php echo $_smarty_tpl->tpl_vars['type']->value['M_TYPE_ID'];?>
 
-							</option>
-				        <?php
+							<?php if ($_smarty_tpl->tpl_vars['type']->value['M_TYPE_ID'] == $_smarty_tpl->tpl_vars['select_data_array']->value['type']) {?>
+								checked="checked"
+							<?php }?>
+							>
+							<?php echo $_smarty_tpl->tpl_vars['type']->value['NAME'];?>
+
+							
+							<?php if ((isset($_smarty_tpl->tpl_vars['__smarty_foreach_foo']->value['iteration']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_foo']->value['iteration'] : null)%9 == 0) {?>
+								<br>
+							<?php }?>
+
+						<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-				      </select>
-				  </td>
+					</td>
 				</tr>
 			</table>
 			<input type="submit" value="送信">

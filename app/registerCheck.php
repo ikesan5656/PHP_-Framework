@@ -30,7 +30,8 @@ $post_data = $_POST;
 //postデータをセッション変数に格納
 $_SESSION = $post_data;
 
-print_r($_SESSION);
+//print_r($_SESSION);
+print_r($post_data["type"]);
 
 //性別取得
 $sql = "SELECT * FROM M_GENDER";
@@ -52,7 +53,7 @@ if(isset($post_data["gender"])) {
 $sql = "SELECT * FROM M_TYPE";
 $m_type = $connect_obj->select($sql);
 
-if(isset($post_data["type"])) {
+/*if(isset($post_data["type"])) {
 	foreach($m_type as $m_type_data) {
 		if($post_data["type"] == $m_type_data["M_TYPE_ID"]) {
 			//$type = $m_type_data["NAME"];
@@ -60,12 +61,32 @@ if(isset($post_data["type"])) {
 			$select_type["TYPE_ID"] = $m_type_data["M_TYPE_ID"];
 		}
 	}
+}*/
+
+$select_type = array();
+$type_name_concatenation = "";
+if(isset($post_data["type"])) {
+	foreach($m_type as $m_type_data) {
+		foreach($post_data["type"] as $post_value) {
+			if($post_value == $m_type_data["M_TYPE_ID"]) {
+				//$type = $m_type_data["NAME"];
+				$select_type["NAME"][] = $m_type_data["NAME"];
+				$select_type["TYPE_ID"][] = $m_type_data["M_TYPE_ID"];
+				
+			}
+		}
+
+	}
 }
+
+$type_name_concatenation = implode("/", $select_type["NAME"]);
+echo $type_name_concatenation;
+//print_r($select_type["NAME"]);
 
 //$smarty->assign('type', $type);
 $smarty->assign('select_gender', $select_gender);
 $smarty->assign('select_type', $select_type);
-
+$smarty->assign('type_name_concatenation', $type_name_concatenation);
 $smarty->display("../templates/registerCheck.html");
 ?>
 

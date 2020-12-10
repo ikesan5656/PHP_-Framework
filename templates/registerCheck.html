@@ -26,14 +26,18 @@
 				</tr>
 				<tr>
 					<th>タイプ</th>
-					<td>{$select_type.NAME}</td>
+					<td>{$type_name_concatenation}</td>
 				</tr>
 			</table>
 			<!--hidden-->
 			<input type="hidden" name="nationwide_id" value={$smarty.post.index}>
 			<input type="hidden" name="name" value={$smarty.post.name}>
 			<input type="hidden" name="select_gender_id" value={$select_gender.GENDER_ID}>
-			<input type="hidden" name="select_type_id" value={$select_type.TYPE_ID}>
+			{foreach from=$select_type.TYPE_ID item=type_id}
+				<input type="hidden" name="select_type[id][]" value={$type_id}>
+			{/foreach}
+
+
 
 			<input type="submit" name="regist" value="登録">
 			<input type="submit" name="back" value="戻る">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-12-02 13:10:52
+/* Smarty version 3.1.34-dev-7, created on 2020-12-09 07:51:47
   from '/home/www/html/PHP_Framework/templates/registerCheck.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc7925c3e0321_04853777',
+  'unifunc' => 'content_5fd08213d9b189_88874260',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0790edc655c023d5041e0519c25c78906cc0d313' => 
     array (
       0 => '/home/www/html/PHP_Framework/templates/registerCheck.html',
-      1 => 1606914628,
+      1 => 1607499838,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc7925c3e0321_04853777 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fd08213d9b189_88874260 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -52,7 +52,7 @@ function content_5fc7925c3e0321_04853777 (Smarty_Internal_Template $_smarty_tpl)
 				</tr>
 				<tr>
 					<th>タイプ</th>
-					<td><?php echo $_smarty_tpl->tpl_vars['select_type']->value['NAME'];?>
+					<td><?php echo $_smarty_tpl->tpl_vars['type_name_concatenation']->value;?>
 </td>
 				</tr>
 			</table>
@@ -63,8 +63,19 @@ function content_5fc7925c3e0321_04853777 (Smarty_Internal_Template $_smarty_tpl)
 >
 			<input type="hidden" name="select_gender_id" value=<?php echo $_smarty_tpl->tpl_vars['select_gender']->value['GENDER_ID'];?>
 >
-			<input type="hidden" name="select_type_id" value=<?php echo $_smarty_tpl->tpl_vars['select_type']->value['TYPE_ID'];?>
+			<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['select_type']->value['TYPE_ID'], 'type_id');
+$_smarty_tpl->tpl_vars['type_id']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['type_id']->value) {
+$_smarty_tpl->tpl_vars['type_id']->do_else = false;
+?>
+				<input type="hidden" name="select_type[id][]" value=<?php echo $_smarty_tpl->tpl_vars['type_id']->value;?>
 >
+			<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+
 
 			<input type="submit" name="regist" value="登録">
 			<input type="submit" name="back" value="戻る">

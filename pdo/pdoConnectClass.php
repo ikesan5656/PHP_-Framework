@@ -14,7 +14,22 @@ class pdoConnectClass {
         //例外をスローしてくれる．これを選択しておくのが一番無難．
         $this->pdo_obj->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo_obj->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    }
+	}
+	
+	//トランザクションの開始
+	public function beginTransaction() {
+		$this->pdo_obj->beginTransaction();
+	}
+
+	//コミット
+	public function commit() {
+		$this->pdo_obj->commit();
+	}
+
+	//ロールバック
+	public function rollBack() {
+		$this->pdo_obj->rollBack();
+	}
 
     //PDOオブジェクトを取得させる
     public function getPdo() {
@@ -37,21 +52,6 @@ class pdoConnectClass {
         return $items;
 	}
 	
-	/**
-	 * ポケモン図鑑テーブルにプリペアドステートメントで挿入
-	 * 
-	 */
-	public function insertPokeIndex($nationwide_id, $name, $gender_id, $type_id) {
-		//文を実行する準備を行い、文オブジェクトを返す
-		$stmt = $this->pdo_obj->prepare("INSERT INTO U_POKEMON_INDEX (NATIONWIDE_ID, NAME, GENDER_ID, TYPE_ID)
-		VALUES (:NATIONWIDE_ID, :NAME, :GENDER_ID, :TYPE_ID)");
-
-		$stmt->bindValue(':NATIONWIDE_ID', $nationwide_id, PDO::PARAM_INT);
-		$stmt->bindParam(':NAME', $name, PDO::PARAM_STR);
-		$stmt->bindValue(':GENDER_ID', $gender_id, PDO::PARAM_INT);
-		$stmt->bindValue(':TYPE_ID', $type_id, PDO::PARAM_INT);
-		$stmt->execute();
-	}
 }
 
 ?>
