@@ -7,18 +7,20 @@
 	</head>
 	<body>
 		<h1 class="page_header" >ポケモン図鑑</h1>
+		
 		<form action="" method="POST"> 
 			<table class="custom">
 				<tr>
 					<th class="table_header" width="10%">図鑑番号</th>
 					<th class="table_header">名前</th>
 					<th class="table_header">性別</th>
+					<th class="table_header">タイプ</th>
 				</tr>
 				<!--
 				<tr>
 					<td class="table_cell">
 						<p>1</p>
-						<img src="../Assets/PixelArts/001.png" alt="画像" width="64">
+						
 					</td>
 					<td class="table_cell">フシギダネ</td>
 					<td class="table_cell">オス</td>
@@ -29,11 +31,15 @@
 					<td class="table_cell">メス</td>
 				</tr>
 				-->
-				{foreach from=$pokemon_index_data item=pokemon_data}
+				{foreach from=$processing_index_data item=pokemon_data}
 					<tr>
-						<td class="table_cell">{$pokemon_data.M_NATIONWIDE_ID}</td>
+						<td class="table_cell">
+							<p>{$pokemon_data.M_NATIONWIDE_ID}</p>
+							<img src="../Assets/PixelArts/{$pokemon_data.IMG_ID}.png" alt="画像" width="64">
+						</td>
 						<td class="table_cell">{$pokemon_data.NAME}</td>
 						<td class="table_cell">{$pokemon_data.GENDER_NAME}</td>
+						<td class="table_cell">{$pokemon_data.TYPE_NAME}</td>
 					</tr>
 				{/foreach}
 

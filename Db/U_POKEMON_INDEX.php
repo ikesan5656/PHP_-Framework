@@ -46,7 +46,7 @@ class Db_U_POKEMON_INDEX extends Db_BaseController {
 		ON {$this->table_name}.GENDER_ID = M_GENDER.M_GENDER_ID
 		");
 		$stmt->execute();
-		$all_join_data = $stmt->fetchAll();
+		$all_join_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $all_join_data;
 		
 	}

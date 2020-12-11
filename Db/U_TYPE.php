@@ -35,4 +35,22 @@ class Db_U_TYPE extends Db_BaseController {
 		$all_join_data = $stmt->fetchAll();
 		return $all_join_data;
 	}
+
+	/**
+	 * 蘭連テーブルをjoinし、名前のみを特定のIDのみ取得する GROUP CONCAT
+	 */
+	public function joinSelectName($pdo_obj, $nationwide_id) {
+		$stmt = $pdo_obj->prepare("
+		SELECT GROUP_CONCAT(M_TYPE.NAME SEPARATOR '/') AS TYPE_NAME
+		FROM {$this->table_name}
+		LEFT JOIN M_TYPE
+		ON {$this->table_name}.TYPE_ID = M_TYPE.M_TYPE_ID
+		WHERE {$this->table_name}.NATIONWIDE_ID = $nationwide_id
+		GROUP BY {$this->table_name}.NATIONWIDE_ID
+		");
+		
+		$stmt->execute();
+		$all_join_data = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $all_join_data;
+	}
 }
